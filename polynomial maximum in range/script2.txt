@@ -1,0 +1,60 @@
+Script started on 2019-09-27 09:44:07-06:00
+]0;kareem.abdelaty@csa2:~/assignment_1kareem.abdelaty@csa2:~/assignment_1$ gdb assignment1b
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assignment1b...(no debugging symbols found)...done.
+(gdb) start
+Temporary breakpoint 1 at 0x4005dc
+Starting program: /home/ugd/kareem.abdelaty/assignment_1/assignment1b 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Temporary breakpoint 1, 0x00000000004005dc in main ()
+(gdb) b *bra[Keak
+Breakpoint 2 at 0x400640
+(gdb) c
+Continuing.
+the value of x is -10 the value of y is -253 the maxvalue is -253 
+the value of x is -9 the value of y is -366 the maxvalue is -253 
+the value of x is -8 the value of y is -415 the maxvalue is -253 
+the value of x is -7 the value of y is -412 the maxvalue is -253 
+the value of x is -6 the value of y is -369 the maxvalue is -253 
+the value of x is -5 the value of y is -298 the maxvalue is -253 
+the value of x is -4 the value of y is -211 the maxvalue is -211 
+the value of x is -3 the value of y is -120 the maxvalue is -120 
+the value of x is -2 the value of y is -37 the maxvalue is -37 
+the value of x is -1 the value of y is 26 the maxvalue is 26 
+the value of x is 0 the value of y is 57 the maxvalue is 57 
+the value of x is 1 the value of y is 44 the maxvalue is 57 
+the value of x is 2 the value of y is -25 the maxvalue is 57 
+the value of x is 3 the value of y is -162 the maxvalue is 57 
+the value of x is 4 the value of y is -379 the maxvalue is 57 
+
+Breakpoint 2, 0x0000000000400640 in end ()
+(gdb) p $x21
+$1 = 57
+(gdb) c
+Continuing.
+[Inferior 1 (process 25460) exited with code 077]
+(gdb) quit
+]0;kareem.abdelaty@csa2:~/assignment_1kareem.abdelaty@csa2:~/assignment_1$ scropt[K[K[K[K[K[Kexot[K[Kit
+exit
+
+Script done on 2019-09-27 09:45:16-06:00
