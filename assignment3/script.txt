@@ -1,0 +1,204 @@
+Script started on 2019-10-25 15:49:10-06:00
+]0;kareem.abdelaty@csa2:~/assignment3kareem.abdelaty@csa2:~/assignment3$ logoutscript script.txtgcc assign3.s -o assign3m4 assign3.asm > assign3.s[11Pvim assign3.asm[2Prm script.txt[4@script[C[C[C[C[C[C[C[C[C[C[Cgcc assign3.s -o assign3m4 assign3.asm > assign3.s[11Pvim assign3.asm[2Prm script.txt[4@script[C[C[C[C[C[C[C[C[C[C[C[6Pgdb assign3
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign3...(no debugging symbols found)...done.
+(gdb) b *break
+Breakpoint 1 at 0x40064c
+(gdb) b *end
+Breakpoint 2 at 0x4006e4
+(gdb) start
+Temporary breakpoint 3 at 0x400618
+Starting program: /home/ugd/kareem.abdelaty/assignment3/assign3 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Temporary breakpoint 3, 0x0000000000400618 in forloop ()
+(gdb) c
+Continuing.
+v[0]: 103
+v[1]: 198
+v[2]: 105
+v[3]: 115
+v[4]: 81
+v[5]: 255
+v[6]: 74
+v[7]: 236
+v[8]: 41
+v[9]: 205
+v[10]: 186
+v[11]: 171
+v[12]: 242
+v[13]: 251
+v[14]: 227
+v[15]: 70
+v[16]: 124
+v[17]: 194
+v[18]: 84
+v[19]: 248
+v[20]: 27
+v[21]: 232
+v[22]: 231
+v[23]: 141
+v[24]: 118
+v[25]: 90
+v[26]: 46
+v[27]: 99
+v[28]: 51
+v[29]: 159
+v[30]: 201
+v[31]: 154
+v[32]: 102
+v[33]: 50
+v[34]: 13
+v[35]: 183
+v[36]: 49
+v[37]: 88
+v[38]: 163
+v[39]: 90
+v[40]: 37
+v[41]: 93
+v[42]: 5
+v[43]: 23
+v[44]: 88
+v[45]: 233
+v[46]: 94
+v[47]: 212
+v[48]: 171
+v[49]: 178
+
+Breakpoint 1, 0x000000000040064c in break ()
+(gdb) x/50d fp+28$fp+28
+0xfffffffff0bc:	65535	-3680	65535	-1083325360
+0xfffffffff0cc:	65535	4325376	0	-1083200896
+0xfffffffff0dc:	65535	-1083198848	65535	0
+0xfffffffff0ec:	0	0	0	0
+0xfffffffff0fc:	0	0	0	0
+0xfffffffff10c:	0	0	0	0
+0xfffffffff11c:	0	-3776	65535	-1084812248
+0xfffffffff12c:	65535	-3776	65535	4196148
+0xfffffffff13c:	0	-3712	65535	-1084896948
+0xfffffffff14c:	65535	4196088	0	0
+0xfffffffff15c:	0	-3712	65535	-1084896920
+0xfffffffff16c:	65535	4196088	0	103
+0xfffffffff17c:	198	105
+(gdb) x/50d $fp+28[K[K[K[K[K[K[K[K[K[K[K[Kc
+Continuing.
+
+Sorted array:
+v[0]: 5
+v[1]: 13
+v[2]: 23
+v[3]: 27
+v[4]: 37
+v[5]: 41
+v[6]: 46
+v[7]: 49
+v[8]: 50
+v[9]: 51
+v[10]: 70
+v[11]: 74
+v[12]: 81
+v[13]: 84
+v[14]: 88
+v[15]: 88
+v[16]: 90
+v[17]: 90
+v[18]: 93
+v[19]: 94
+v[20]: 99
+v[21]: 102
+v[22]: 103
+v[23]: 105
+v[24]: 115
+v[25]: 118
+v[26]: 124
+v[27]: 141
+v[28]: 154
+v[29]: 159
+v[30]: 163
+v[31]: 171
+v[32]: 171
+v[33]: 178
+v[34]: 183
+v[35]: 186
+v[36]: 194
+v[37]: 198
+v[38]: 201
+v[39]: 205
+v[40]: 212
+v[41]: 227
+v[42]: 231
+v[43]: 232
+v[44]: 233
+v[45]: 236
+v[46]: 242
+v[47]: 248
+v[48]: 251
+v[49]: 255
+
+Breakpoint 2, 0x00000000004006e4 in end ()
+(gdb) cx/50d $fp+28
+0xfffffffff0bc:	65535	-3680	65535	-1083325360
+0xfffffffff0cc:	65535	4325376	0	-1083200896
+0xfffffffff0dc:	65535	-1083198848	65535	0
+0xfffffffff0ec:	0	0	0	0
+0xfffffffff0fc:	0	0	0	0
+0xfffffffff10c:	0	0	0	0
+0xfffffffff11c:	0	-3776	65535	-1084812248
+0xfffffffff12c:	65535	-3776	65535	4196148
+0xfffffffff13c:	0	-3712	65535	-1084896948
+0xfffffffff14c:	65535	4196088	0	0
+0xfffffffff15c:	0	-3712	65535	-1084896920
+0xfffffffff16c:	65535	4196088	0	5
+0xfffffffff17c:	13	23
+(gdb) x/50d $fp+28[K[K32
+0xfffffffff0c0:	-3680	65535	-1083325360	65535
+0xfffffffff0d0:	4325376	0	-1083200896	65535
+0xfffffffff0e0:	-1083198848	65535	0	0
+0xfffffffff0f0:	0	0	0	0
+0xfffffffff100:	0	0	0	0
+0xfffffffff110:	0	0	0	0
+0xfffffffff120:	-3776	65535	-1084812248	65535
+0xfffffffff130:	-3776	65535	4196148	0
+0xfffffffff140:	-3712	65535	-1084896948	65535
+0xfffffffff150:	4196088	0	0	0
+0xfffffffff160:	-3712	65535	-1084896920	65535
+0xfffffffff170:	4196088	0	5	13
+0xfffffffff180:	23	27
+(gdb) x/50d $fp+32[K[K[K[K[K[K[K[K[K[K[K[Kquit
+A debugging session is active.
+
+	Inferior 1 [process 15385] will be killed.
+
+Quit anyway? (y or n) n
+Not confirmed.
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) n
+Program not restarted.
+(gdb) c
+Continuing.
+[Inferior 1 (process 15385) exited with code 013]
+(gdb) quit
+]0;kareem.abdelaty@csa2:~/assignment3kareem.abdelaty@csa2:~/assignment3$ exit
+exit
+
+Script done on 2019-10-25 15:51:56-06:00

@@ -1,0 +1,307 @@
+Script started on 2019-10-11 03:04:47-06:00
+]0;kareem.abdelaty@csa2:~/assignment_2kareem.abdelaty@csa2:~/assignment_2$ gdb assign2a.s[K
+GNU gdb (GDB) Fedora 8.1.1-4.fc28
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "aarch64-redhat-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from assign2a...(no debugging symbols found)...done.
+(gdb) start
+Temporary breakpoint 1 at 0x40061c
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+Missing separate debuginfos, use: dnf debuginfo-install glibc-2.27-38.fc28.aarch64
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+
+Temporary breakpoint 1, 0x000000000040061c in main ()
+(gdb) display/i $pc
+1: x/i $pc
+=> 0x40061c <main+8>:	mov	w19, #0xfefefefe            	// #-16843010
+(gdb) B[Kn[Kb* fo[K[K[Kforllo[K[Koop
+Breakpoint 2 at 0x400654
+(gdb) c
+Continuing.
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) ni
+0x0000000000400658 in forloop ()
+1: x/i $pc
+=> 0x400658 <forloop+4>:	and	w28, w27, w20
+(gdb) ni
+0x000000000040065c in forloop ()
+1: x/i $pc
+=> 0x40065c <forloop+8>:	cmp	w28, #0x0
+(gdb) ni
+0x0000000000400660 in forloop ()
+1: x/i $pc
+=> 0x400660 <forloop+12>:	b.eq	0x400668 <skipadd>  // b.none
+(gdb) ni
+0x0000000000400668 in skipadd ()
+1: x/i $pc
+=> 0x400668 <skipadd>:	asr	w20, w20, w27
+(gdb) ni
+0x000000000040066c in skipadd ()
+1: x/i $pc
+=> 0x40066c <skipadd+4>:	and	w28, w27, w21
+(gdb) ni
+0x0000000000400670 in skipadd ()
+1: x/i $pc
+=> 0x400670 <skipadd+8>:	cmp	w28, #0x0
+(gdb) ni
+0x0000000000400674 in skipadd ()
+1: x/i $pc
+=> 0x400674 <skipadd+12>:	b.eq	0x4006dc <else>  // b.none
+(gdb) ni
+0x00000000004006dc in else ()
+1: x/i $pc
+=> 0x4006dc <else>:	and	w20, w20, #0x7fffffff
+(gdb) ni
+0x00000000004006e0 in else ()
+1: x/i $pc
+=> 0x4006e0 <else+4>:	b	0x40067c <shiftprod>
+(gdb) ni
+0x000000000040067c in shiftprod ()
+1: x/i $pc
+=> 0x40067c <shiftprod>:	asr	w21, w21, w27
+(gdb) ni
+0x0000000000400680 in shiftprod ()
+1: x/i $pc
+=> 0x400680 <shiftprod+4>:	add	w22, w22, #0x1
+(gdb) ni
+0x0000000000400684 in shiftprod ()
+1: x/i $pc
+=> 0x400684 <shiftprod+8>:	cmp	w22, #0x20
+(gdb) ni
+0x0000000000400688 in shiftprod ()
+1: x/i $pc
+=> 0x400688 <shiftprod+12>:	b.lt	0x400654 <forloop>  // b.tstop
+(gdb) ni
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) ni
+0x0000000000400658 in forloop ()
+1: x/i $pc
+=> 0x400658 <forloop+4>:	and	w28, w27, w20
+(gdb) ni
+0x000000000040065c in forloop ()
+1: x/i $pc
+=> 0x40065c <forloop+8>:	cmp	w28, #0x0
+(gdb) ni
+0x0000000000400660 in forloop ()
+1: x/i $pc
+=> 0x400660 <forloop+12>:	b.eq	0x400668 <skipadd>  // b.none
+(gdb) ni
+0x0000000000400664 in forloop ()
+1: x/i $pc
+=> 0x400664 <forloop+16>:	add	w21, w21, w19
+(gdb) ni
+0x0000000000400668 in skipadd ()
+1: x/i $pc
+=> 0x400668 <skipadd>:	asr	w20, w20, w27
+(gdb) ni
+0x000000000040066c in skipadd ()
+1: x/i $pc
+=> 0x40066c <skipadd+4>:	and	w28, w27, w21
+(gdb) ni
+0x0000000000400670 in skipadd ()
+1: x/i $pc
+=> 0x400670 <skipadd+8>:	cmp	w28, #0x0
+(gdb) ni
+0x0000000000400674 in skipadd ()
+1: x/i $pc
+=> 0x400674 <skipadd+12>:	b.eq	0x4006dc <else>  // b.none
+(gdb) ni
+0x00000000004006dc in else ()
+1: x/i $pc
+=> 0x4006dc <else>:	and	w20, w20, #0x7fffffff
+(gdb) ni
+0x00000000004006e0 in else ()
+1: x/i $pc
+=> 0x4006e0 <else+4>:	b	0x40067c <shiftprod>
+(gdb) P[Kp $w19
+$1 = 4278124286
+(gdb) P w20
+Undefined command: "P".  Try "help".
+(gdb) pw2 w2[C[C0
+No symbol table is loaded.  Use the "file" command.
+(gdb) p w20$w20
+$2 = 17
+(gdb) [ $[K[K[Kp $21
+History has not yet reached $21.
+(gdb) p$ $[Cw21
+$3 = 4278124286
+(gdb) ni
+0x000000000040067c in shiftprod ()
+1: x/i $pc
+=> 0x40067c <shiftprod>:	asr	w21, w21, w27
+(gdb) ni
+0x0000000000400680 in shiftprod ()
+1: x/i $pc
+=> 0x400680 <shiftprod+4>:	add	w22, w22, #0x1
+(gdb) ni
+0x0000000000400684 in shiftprod ()
+1: x/i $pc
+=> 0x400684 <shiftprod+8>:	cmp	w22, #0x20
+(gdb) ni
+0x0000000000400688 in shiftprod ()
+1: x/i $pc
+=> 0x400688 <shiftprod+12>:	b.lt	0x400654 <forloop>  // b.tstop
+(gdb) ni
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) P[Kp$w2[K19 $w19[C
+$4 = 4278124286
+(gdb) p$w20 $w20
+$5 = 17
+(gdb) p$ $[Cw21
+$6 = 4286545791
+(gdb) p $w22
+$7 = 2
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) ry[K
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) r
+The program being debugged has been started already.
+Start it from the beginning? (y or n) y
+Starting program: /home/ugd/kareem.abdelaty/assignment_2/assign2a 
+warning: the debug information found in "/usr/lib/debug//usr/lib64/ld-2.27.so.debug" does not match "/lib/ld-linux-aarch64.so.1" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+warning: the debug information found in "/usr/lib/debug//usr/lib64/libc-2.27.so.debug" does not match "/lib64/libc.so.6" (CRC mismatch).
+
+multiplier = 0x00000046 (70)  multiplicand = 0xfefefefe (-16843010)
+
+
+Breakpoint 2, 0x0000000000400654 in forloop ()
+1: x/i $pc
+=> 0x400654 <forloop>:	mov	w27, #0x1                   	// #1
+(gdb) continu[K[K[K[K[K[K[Kinfo breakpoints
+Num     Type           Disp Enb Address            What
+2       breakpoint     keep y   0x0000000000400654 <forloop>
+	breakpoint already hit 1 time
+(gdb) delte[K[Kete 2
+(gdb) c
+Continuing.
+product = 0xffffffff  multiplier = 0xb9b9b974
+64-bit result = 0xffffffffb9b9b974 (-1179010700)
+[Inferior 1 (process 23915) exited with code 061]
+(gdb) quit
+]0;kareem.abdelaty@csa2:~/assignment_2kareem.abdelaty@csa2:~/assignment_2$ exit
+exit
+
+Script done on 2019-10-11 03:12:31-06:00
